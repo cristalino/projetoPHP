@@ -1,23 +1,44 @@
+<!DOCTYPE html>
+<html>
 
-<html lang="pt-br">
-	<head>
-	<meta charset="utf-8"/>
-	<title>Login</title>
-	<link rel="stylesheet" href="CSS/estilo.css">
-</head>
-<body>
-    <center>
-    <div id="corpo-form">
-            <h1>Entrar</h1>
-            <form method="get" action="php/login.php">
-                    <input type="email" placeholder="Usuário" name="email"><br/>
-                    <input type="password" placeholder="Senha" name="senha"><br/><br/>
+    <head>
 
-                    <input type="submit" value="Acessar"><br/><br/>
-                    <a href="cadastrar.html">Ainda não é inscrito?<strong>Cadastre-se!</strong></a>
+      <meta charset="UTF-8">
+
+      <title>Papne - Login</title>
+
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="">
+
+        <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    </head>
+
+    <body>
+
+            <form method="get" action="login.php">  
+              <div class="wrap">
+                            <div class="avatar">
+                                <img src="avatar.jpg">
+                            </div>
+
+                            <input type="email" name = "email" placeholder="Email"/>
+
+                            <input type="password" name = "senha" placeholder="Senha"/><br/>
+
+                            <button>Entrar</button>
+                            
+                            <h4><a href="cadastrar.html">Não possui cadastro ?</a></h4>
+                    </div>
+
+              <script src="js/index.js"></script>
+              
             </form>
-    </div>
-    </center>
-</body>
+
+    </body>
 
 </html>
+

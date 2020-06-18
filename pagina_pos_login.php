@@ -5,27 +5,30 @@
 
   <meta charset="utf-8">
   
-   
-    <?php 
-        session_start();//Inicia uma nova sessão ou resume uma sessão existente
 
-        if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
-        {
-            session_unset();    //remove todas as variáveis de sessão
-            echo "<script>
-                alert('Esta página só pode ser acessada por usuário logado');
-                window.location.href = '../index.html';
-                </script>";
+            <?php 
+                session_start();//Inicia uma nova sessão ou resume uma sessão existente
 
-        }
-        $logado = $_SESSION['email'];
-        
-        
-    ?>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+                if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
+                {
+                    session_unset();    //remove todas as variáveis de sessão
+                    echo "<script>
+                        alert('Esta página só pode ser acessada por usuário logado');
+                        window.location.href = 'index.html';
+                        </script>";
+
+                }
+                $logado = $_SESSION['email'];
+
+
+            ?>
+
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <meta name="description" content="">
+          <meta name="author" content="">
+
+            <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+            <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <title>PAPNE</title>
 
@@ -69,6 +72,13 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Deixe seu comentário</a>
           </li>
+          
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="logout.php">LOGOUT</a>
+          </li>
+          
+
+
         </ul>
       </div>
     </div>
@@ -83,8 +93,9 @@
 		   <li data-target="#carouselSite" data-slide-to="4" ></li>
 		   <li data-target="#carouselSite" data-slide-to="5" ></li>
 		</ol>
-		<div class="carousel-inner">
-		   <div class="carousel-item active">
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+                    
 		        <img src="img/portfolio/01-full.jpg" class="img-fluid d-block">
 	</div>
 	      <div class="carousel-item">
@@ -110,14 +121,16 @@
 	    <spam class="carousel-control-next-icon"></spam>
 		<spam class="sr-only">Avançar</spam>
 	</a>
+                    
+                    
 	</div>
 
   <!-- Header -->
   <header class="masthead">
     <div class="container">
       <div class="intro-text">
-        <div class="intro-lead-in">Seja bem vindo!</div>
-        <div class="intro-heading text-uppercase">O site onde quem precisa encontra ajuda! </div>
+          <div class="intro-lead-in"><font color="black">Seja bem vindo!</font></div>;
+        <div class="intro-heading text-uppercase"><font color="black">O site onde quem precisa encontra ajuda! </font></div>
         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Saiba Mais</a>
       </div>
     </div>
@@ -354,39 +367,43 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <form id="contactForm" name="sentMessage" novalidate="novalidate">
+            <form action="recebeSugestao.php" method="post" >
             <div class="row">
               <div class="col-md-6">
+                  
                 <div class="form-group">
-                  <input class="form-control" id="name" type="text" placeholder="Digite o seu nome aqui" required="required" data-validation-required-message="Digite o seu nome.">
+                     <input type="text" placeholder="Nome" name="nomeUsuario" required>
                   <p class="help-block text-danger"></p>
                 </div>
+                  
                 <div class="form-group">
-                  <input class="form-control" id="email" type="email" placeholder="Digite o seu email aqui" required="required" data-validation-required-message="Digite o seu endereço de email.">
+                 <input type="email" placeholder="Email" name="email" required>
                   <p class="help-block text-danger"></p>
                 </div>
+         
                 <div class="form-group">
-                  <input class="form-control" id="phone" type="tel" placeholder="Digite o seu número de telefone aqui" required="required" data-validation-required-message="Digite o seu número de telefone aqui.">
+                  <textarea placeholder="Mensagem..." rows="5" name="comentario" required></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
+                  
+                    <input type="submit" value="Enviar Mensagem"/>
+                  
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <textarea class="form-control" id="message" placeholder="Digite aqui a sua mensagem" required="required" data-validation-required-message="Digite aqui a sua mensagem."></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="clearfix"></div>
+                
+                <div class="clearfix"></div>
               <div class="col-lg-12 text-center">
-                <div id="success"></div>
-                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar Mensagem</button>
+              <div id="success"></div>
               </div>
-            </div>
-          </form>
+            </div>  
+          </form> 
+            
         </div>
       </div>
     </div>
   </section>
+  
+  
+  
 
   <!-- Footer -->
   <footer class="footer">

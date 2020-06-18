@@ -28,14 +28,14 @@ VALUES ('$email', '$senha')";
 if ($conecta->query($sql) === TRUE AND  $conecta->query($sql2) === TRUE) {
     echo "<script> 
                 alert('Usuário cadastrado com sucesso');
-                window.location.href ='../index.html';
+                window.location.href ='index.html';
            </script>";
     
 } else {
     echo "Erro: " . $sql . "<br>" . $conecta->error . "<br>";
     echo "<script> 
                 alert('Erro no cadastro de usuário: " . $sql . "<br>" . $conecta->error . "<br>');
-                window.location.href = '../cadastrar.html';
+                window.location.href = 'cadastrar.html';
            </script>";
 }
 mysqli_set_charset($conecta, "utf8");

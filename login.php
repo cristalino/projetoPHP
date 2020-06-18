@@ -29,12 +29,15 @@ if ($resultado->num_rows > 0) {
     $_SESSION['senha'] = $senha;
     header('location:pagina_pos_login.php');
     
+    
+    
+    
 } else {
     session_unset(); //remove todas as variáveis de sessão
     session_destroy();
     echo "<script> 
                 alert('Login ou senha incorreto');
-                window.location.href = '../index.html';
+                window.location.href = 'index.html';
            </script>";
 }
 mysqli_set_charset($conecta, "utf8");

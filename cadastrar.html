@@ -1,24 +1,45 @@
-<html lang="pt-br">
-	<head>
-	<meta charset="utf-8"/>
-	<title>Cadastro Papne</title>
-	<link rel="stylesheet" href="CSS/estilo.css">
-</head>
-<body>
-    <center>
-    <div id="corpo-form">
-            <h1>Cadastrar</h1>
-            <form method="get" action="php/cadastrar.php">
-                    <input type="number" placeholder="CPF" name="cpf" required><br/>
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+      <meta charset="UTF-8">
+
+      <title>Papne - Cadastro</title>
+
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="">
+
+        <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    </head>
+
+    <body>
+
+            <form method="get" action="cadastrar.php">  
+                <div class="wrap">
+                    <div class="avatar">
+                        <img src="avatar.jpg">
+                    </div>
+
                     <input type="text" placeholder="Nome de Usuário" name="nome" required><br/>
+                    <input type="number" placeholder="CPF" name="cpf" required><br/>
                     <input type="email" placeholder="Email" name="email" required><br/>
                     <input type="number" placeholder="Número do Celular" name="numero" required><br/>
                     <input type="password" placeholder="Senha" name="senha" required><br/><br/>
 
-                    <input type="submit" value="Enviar">	
-            </form>
-    </div>
-    </center>
-</body>
+                    <button>Cadastrar</button>
+                    
+                    
+                    <a href="index.html">Voltar para login</a>
 
+                </div>
+              <script src="js/index.js"></script>
+            </form>
+    </body>
 </html>
+
